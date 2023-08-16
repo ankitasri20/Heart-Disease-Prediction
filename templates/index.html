@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Status</title>
+
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');  
+      *{  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+        font-family: 'Montserrat', sans-serif;  
+        color:black;  
+      }  
+      body{  
+        background: url("static/home_bg.jpg") no-repeat top center;  
+        padding: 0 10px;  
+        background-size: cover;  
+      }  
+      .wrapper{  
+        max-width: 500px;  
+        width: 100%;  
+        background: rgba(0, 0, 0, 0.7);  
+        margin: 20px auto;  
+        padding: 30px;  
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 1.25);  
+      }  
+      .wrapper .title{  
+        font-size: 24px;  
+        font-weight: 700;  
+        margin-bottom: 25px;  
+        color: #fec107;  
+        text-transform: uppercase;  
+        text-align: center;  
+      }  
+      .wrapper .form{  
+        width: 100%;  
+      }  
+      .wrapper .form .input_field{  
+        margin-bottom: 15px;  
+        display: flex;  
+        align-items: center;  
+      }  
+      .wrapper .form .input_field label{  
+        width:80px;  
+        font: bold;  
+        color: wheat;  
+        margin-right: 10px;  
+        font-size: 14px;  
+      }  
+      .wrapper .form .input_field input{  
+        width: 100px;  
+      }  
+      .wrapper .form .input_field .textarea{  
+        resize: none;  
+        height: 250px;  
+        width: 500px;  
+      }  
+    </style>
+
+</head>
+<body>
+    <div id = "main">
+        Status of your heart disease: {{value[0]}}
+    </div>
+</body>
+</html>

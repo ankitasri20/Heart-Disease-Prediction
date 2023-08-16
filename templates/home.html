@@ -1,0 +1,227 @@
+<html lang="en">  
+    <head>  
+      <meta charset="UTF-8">  
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+      <title>Heart Disease Prediction</title>  
+    </head>  
+    <style>  
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');  
+    *{  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      font-family: 'Montserrat', sans-serif;  
+      color:black;  
+    }  
+    body{  
+      background: url("static/home_bg.jpg") no-repeat top center;  
+      padding: 0 10px;  
+      background-size: cover;  
+    }  
+    .wrapper{  
+      max-width: 500px;  
+      width: 100%;  
+      background: rgba(0, 0, 0, 0.7);  
+      margin: 20px auto;  
+      padding: 30px;  
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 1.25);  
+    }  
+    .wrapper .title{  
+      font-size: 24px;  
+      font-weight: 700;  
+      margin-bottom: 25px;  
+      color: #fec107;  
+      text-transform: uppercase;  
+      text-align: center;  
+    }  
+    .wrapper .form{  
+      width: 100%;  
+    }  
+    .wrapper .form .input_field{  
+      margin-bottom: 15px;  
+      display: flex;  
+      align-items: center;  
+    }  
+    .wrapper .form .input_field label{  
+      width:80px;  
+      font: bold;  
+      color: wheat;  
+      margin-right: 10px;  
+      font-size: 14px;  
+    }  
+    .wrapper .form .input_field input{  
+      width: 100px;  
+    }  
+    .wrapper .form .input_field .textarea{  
+      resize: none;  
+      height: 250px;  
+      width: 500px;  
+    }  
+    </style>  
+
+    <body>  
+    <form action = "/" method="post">  
+      <div class="wrapper">  
+        <div class="title">  
+          <h1 style="color: white;">Heart Disease Prediction</h1>  
+        </div>  
+        <div class="form">  
+          <div class="input_field">  
+      
+           </div>  
+          
+          
+           <div class="input_field">  
+            <label>AGE</label>  
+            <input type="number" id="age" min="0" max="150" name="age" class="input_text">  
+            <!-- <br/>  <i style="font-size: 10px; color: white;">(Age: 1 - 150)</i>   -->
+          </div>  
+
+          
+          <div class="input_field">  
+            <label>SEX</label>  
+              <select name="sex" id="sex">
+                <option disabled selected value style = "display:none">-- select your gender --</option> 
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+             <!-- <input type="number" min="0" max="1" name="sex" id="sex" class="input_text">   -->
+             <!-- <br/>  <i style="font-size: 10px; color: white;">(Male: 1 & Female: 0)</i>   -->
+           </div>  
+          
+          
+           <div class="input_field">  
+            <label>Chest Pain</label>
+              <select name="chest_pain" id="chest_pain">
+                <option disabled selected value style = "display:none">-- chest pain --</option> 
+                <option value="0">No Pain</option>
+                <option value="1">Light Pain</option>
+                <option value="2">Moderate Pain</option>
+                <option value="3">Severe Pain</option>
+              </select>  
+             <!-- <input type="number" name="cp" id="cp" min="0" max="3" class="input_text">   -->
+             <!-- <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-3)</i>   -->
+           </div> 
+           
+
+           <div class="input_field"> 
+            <label>Cholestrol</label>  
+             <input name="chol" id="chol" type="number" min="0" step="1" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(mg/dl)</i>  
+           </div>
+
+
+           <div class="input_field">  
+            <label>Resting Blood Sugar</label>  
+             <input name="trestbps" id="trestbps" type="number" min="0" step="1" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(mm/Hg)</i>  
+           </div>    
+           
+           
+           <div class="input_field">  
+            <label>Fasting Blood Sugar</label>  
+              <select name="fbs" id="fbs">
+                <option disabled selected value style = "display:none">-- sugar-level-at-fasting --</option> 
+                <option value="0">Lesser than  120</option>
+                <option value="0">Equal to  120</option>
+                <option value="1">Greater than 120</option>
+              </select> 
+             <!-- <input type="number" min="0" max="1" name="fbs" id="fbs" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(1 = True; 0 = False)</i>   -->
+
+
+           </div>  
+           <div class="input_field">  
+            <label>Resting ECG</label>  
+            <select name="restecg" id="restecg">
+              <option disabled selected value style = "display:none">-- resting ECG result --</option> 
+              <option value="0">Normal</option>
+              <option value="1">ST-T wave abnormality</option>
+              <option value="2">Hypertrophy</option>
+            </select> 
+             <!-- <input type="number" name="restecg" min="0" max="2" id="restecg" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-2)</i>   -->
+           </div>  
+
+
+
+           <div class="input_field">  
+            <label>Max Heart Rate</label>  
+             <input name="thalach" id="thalach" type="number" min="0" step="1" class="input_text">    
+           </div>  
+
+
+           <div class="input_field">  
+              <label>Exercise Induced Angina</label>  
+              <select name="exang" id="exang">
+                <option disabled selected value style = "display:none">-- Exercise Induced Angina --</option> 
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select> 
+
+             <!-- <input type="number" min="0" max="1" name="exang" id="exang" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(Exercise: 1 = YES; 0 = NO)</i>   -->
+           </div>  
+
+
+
+           <div class="input_field">  
+            <label>ST Depression after Exercise</label>  
+             <input name="oldpeak" id="oldpeak" type="number" min="0" step="0.01" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(Enter Decimal Value)</i>  
+           </div>  
+
+
+           <div class="input_field">  
+            <label>Slope</label>  
+            <select name="slope" id="slope">
+              <option disabled selected value style = "display:none">-- Slope of peak exercise ST segment --</option> 
+              <option value="0">Downsloping</option>
+              <option value="1">Flat</option>
+              <option value="2">Upsloping</option>
+            </select> 
+<!-- 
+             <input type="number" min="0" max="2" name="slope" id="slope" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-2)</i>   -->
+           </div>  
+
+
+
+           <div class="input_field">  
+            <label>Coloured Vessels</label>  
+            <select name="ca" id="ca">
+              <option disabled selected value style = "display:none">-- Number of blood vessels colored by flourosopy --</option> 
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3 or more</option>
+            </select> 
+             <!-- <input type="number" name="ca" min="0" max="4" id="ca" class="input_text">  
+             <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-4)</i>   -->
+           </div>
+           
+           
+           <div class="input_field">  
+            <label>Thalassemia</label>  
+            <select name="thal" id="thal">
+              <option disabled selected value style = "display:none">-- Slope of peak exercise ST segment --</option> 
+              <option value="0">Fixed Defect(No blood flow in some part of heart)</option>
+              <option value="1">Normal Blood Flow</option>
+              <option value="2">Reversible Defect(Abnormal blood flow observerd)</option>
+              </select>
+             <!-- <input type="number" name="thal" min="0" max="3" id="thal" class="input_text">  
+             <br>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-3)</i>   -->
+           </div>  
+
+           <div class="input_field">  
+            <input type="submit" style="color:black; background: skyblue;" id="submit" value="SUBMIT">  
+          </div>  
+
+          <div>  
+        </div>  
+        </div>  
+      </div>  
+    </form>  
+    </body>  
+    </html>  
